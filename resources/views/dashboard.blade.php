@@ -1,42 +1,65 @@
 @extends('layouts.app')
 
 @section('content')
-    {{-- <div class="container">
-        <h2 class="fs-4 text-secondary my-4">
-            {{ __('Dashboard') }}
-        </h2>
-        <div class="row justify-content-center">
-            <div class="col">
-                <div class="card">
-                    <div class="card-header">{{ __('User Dashboard') }}</div>
+    <div class="progetti p-5">
+        <div class="d-flex">
 
-                    <div class="card-body">
-                        @if (session('status'))
-                            <div class="alert alert-success" role="alert">
-                                {{ session('status') }}
-                            </div>
-                        @endif
+            <h2 class="">Progetti</h2>
 
-                        {{ __('You are logged in!') }}
-                    </div>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                aria-controls="offcanvasWithBothOptions">Enable both scrolling & backdrop</button>
+
+            <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+                aria-labelledby="offcanvasWithBothOptionsLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <a class="btn btn-primary mx-3" href="{{ route('project.create') }}">
+                        Aggiungi progetto
+                    </a>
                 </div>
             </div>
-        </div> --}}
 
-    <h1>Progetti!</h1>
-    <ul>
-        @foreach ($projects as $project)
-            <li>
-                <a href="{{ route('project.show', $project->id) }}"> {{ $project->titolo }}</a>
+        </div>
 
-            </li>
-        @endforeach
-    </ul>
+        <div class="flex-project">
+
+            @foreach ($projects as $project)
+                <div class="d-flex justify-content-between flex-wrap w-100 p-4 align-items-center border-bottom">
 
 
-    <h3 class="text-center">Progetti <a class="btn btn-primary" href="{{ route('project.create') }}">
-            +
-        </a></h3>
+                    <div>
+                        <a class="link-body-emphasis link-underline-opacity-0 fs-4"
+                            href="{{ route('project.show', $project->id) }}">
+                            {{ $project->titolo }}</a>
+                    </div>
+
+                    <div class="d-flex justify-content-between">
+
+                        <a class=" btn btn-secondary text-white" href="{{ route('project.show', $project->id) }}">
+                            Dettagli</a>
+
+                        <a class="link-body-emphasis btn btn-light mx-3"
+                            href="{{ route('project.edit', $project->id) }}">Modifica</a>
+
+                        <form class="mx-3" method="POST" action="{{ route('project.destroy', $project->id) }}">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger" type="submit">Elimina</button>
+                        </form>
+                    </div>
+                </div>
+            @endforeach
+
+        </div>
+
+    </div>
+
+
+
+
 
 
 
@@ -44,8 +67,6 @@
     <ul>
         @foreach ($technologies as $technology)
             <li>
-
-
                 <a href="{{ route('technology.show', $technology->id) }}"> {{ $technology->nome }}</a>
 
             </li>
@@ -53,9 +74,9 @@
     </ul>
 
 
-    <h3 class="text-center">Tecnologie <a class="btn btn-primary" href="{{ route('technology.create') }}">
+    <span class="text-center">Tecnologie <a class="btn btn-primary" href="{{ route('technology.create') }}">
             +
-        </a></h3>
+        </a></span>
 
     </div>
 @endsection
