@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+Route::prefix('v1')->group(function () {
+
+    Route::get('/', [UserController::class, 'projectsIndex']);
+
+    Route::get('/projects/{id}', [UserController::class, 'projectShow']);
+
+    Route::get('/types', [UserController::class, 'getTypes']);
+    Route::get('/technologies', [UserController::class, 'getTechnologies']);
 });
