@@ -7,12 +7,12 @@
         <form method="POST" action="{{ route('project.store') }}" enctype="multipart/form-data">
 
             @csrf
-            {{-- @method('POST') --}}
+            @method('POST')
 
-            {{-- <label for="main_picture">Main picture</label>
+            <label for="immagine">immagine</label>
             <br>
-            <input type="file" name="main_picture" id="main_picture">
-            <br> --}}
+            <input type="file" name="immagine" id="immagine">
+            <br>
 
 
             <label for="titolo">titolo</label>

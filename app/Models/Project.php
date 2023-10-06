@@ -13,6 +13,7 @@ class Project extends Model
         'titolo',
         'descrizione',
         'data',
+        'immagine',
 
         'type_id'
     ];

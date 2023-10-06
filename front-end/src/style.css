@@ -1,3 +1,7 @@
+::selection {
+    background: rgba(254, 204, 171, 0.3);
+}
+
 /* @import url(https://fonts.googleapis.com/css?family=Exo:100); */
 
 /* Background data (Original source: https://subtlepatterns.com/grid-me/) */
@@ -82,8 +86,8 @@ body {
     left: 50%;
     transform: translate(-50%);
     border-radius: 50%;
-    background: rgba(128, 0, 128, 0.2);
-    /* Viola con trasparenza del 20% */
+    background: rgba(254, 204, 171, 0.3);
+
 
     pointer-events: none;
     z-index: 111;

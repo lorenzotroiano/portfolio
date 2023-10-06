@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
+
 use Illuminate\Http\Request;
 use App\Models\Project;
 use App\Models\Type;
@@ -51,8 +53,8 @@ class ProjectController extends Controller
         // $project = Project::create($data);
 
 
-        // $img_path = Storage::put('uploads', $data['main_picture']);
-        // $data['main_picture'] = $img_path;
+        $img_path = Storage::put('uploads', $data['immagine']);
+        $data['immagine'] = $img_path;
 
         $project = Project::create($data);
         $project->technologies()->attach($data['technologies']);
@@ -82,6 +84,7 @@ class ProjectController extends Controller
         $data = $request->all();
 
         $project = Project::findOrFail($id);
+
         // $project->update($data);
 
         // if (array_key_exists('technologies', $data))
@@ -95,15 +98,15 @@ class ProjectController extends Controller
                 : []
         );
 
-        // if (!array_key_exists("main_picture", $data))
-        //     $data['main_picture'] = $project->main_picture;
-        // else {
-        //     if ($project->main_picture) {
-        //         $oldImgPath = $project->main_picture;
-        //         Storage::delete($oldImgPath);
-        //     }
-        //     $data['main_picture'] = Storage::put('uploads', $data['main_picture']);
-        // }
+        if (!array_key_exists("immagine", $data))
+            $data['immagine'] = $project->immagine;
+        else {
+            if ($project->immagine) {
+                $oldImgPath = $project->immagine;
+                Storage::delete($oldImgPath);
+            }
+            $data['immagine'] = Storage::put('uploads', $data['immagine']);
+        }
 
         $project->update($data);
 
@@ -124,5 +127,23 @@ class ProjectController extends Controller
 
         // Reindirizza all'URL della vista 'welcome' dopo l'eliminazione del progetto
         return redirect()->route('dashboard');
+    }
+
+
+    public function deletePicture($id)
+    {
+
+        $project = Project::findOrFail($id);
+
+        if ($project->immagine) {
+
+            $oldImgPath = $project->immagine;
+            Storage::delete($oldImgPath);
+        }
+
+        $project->immagine = null;
+        $project->save();
+
+        return redirect()->route('project.show', $project->id);
     }
 }

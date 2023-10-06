@@ -1,22 +1,50 @@
 <script>
 
+
 export default {
     name: "HeaderApp",
+
+
 }
 
 </script>
 
 <template>
-    <header>
+    <header class="p-4">
         <nav>
             <router-link class="link-offset-2 link-underline link-underline-opacity-0 link-secondary"
                 :to="{ name: 'landingpage' }">
 
-                <h1>throjans <i class="fa-solid fa-laptop mx-2">
-
-                    </i></h1>
+                <h1 class="fs-3">throjans
+                    <i class="fa-solid fa-horse-head mx-2"></i>
+                </h1>
             </router-link>
-            <a href="http://127.0.0.1:8000/login">Login</a>
+
+
+
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Menu
+                </button>
+                <ul class="dropdown-menu">
+                    <li><button class="dropdown-item" type="button"> <router-link
+                                class="link-offset-2 link-underline link-underline-opacity-0 link-secondary font"
+                                :to="{ name: 'home' }"><span class="hover-underline">
+
+                                    Progetti
+                                </span></router-link></button></li>
+                    <li><button class="dropdown-item" type="button"> <router-link
+                                class="link-offset-2 link-underline link-underline-opacity-0 link-secondary font"
+                                :to="{ name: 'about' }"> <span class="hover-underline">
+
+                                    Chi sono
+                                </span></router-link></button></li>
+                    <li><button class="dropdown-item" type="button"><a href="mailto:lorr.troiano99@libero.it?
+subject=Contattami!">Contatto</a></button>
+                    </li>
+                </ul>
+            </div>
 
 
 

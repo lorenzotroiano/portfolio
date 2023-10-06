@@ -14,7 +14,7 @@ class UserController extends Controller
     public function projectsIndex()
     {
 
-        $projects = Project::all();
+        $projects = Project::with('type')->get();
 
         return response()->json([
             'projects' => $projects

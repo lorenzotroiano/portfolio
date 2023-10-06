@@ -56,6 +56,9 @@ Route::middleware('auth')->group(function () {
     Route::put('project/{id}', [ProjectController::class, 'update'])->name('project.update');
     Route::put('technology/{id}', [TechnologyController::class, 'update'])->name('technology.update');
 
+    Route::delete('/projects/{id}/picture', [ProjectController::class, 'deletePicture'])
+        ->name('project.picture.delete');
+
     // Rotta per eliminare un progetto dal database
     Route::delete('project/{id}', [ProjectController::class, 'destroy'])->name('project.destroy');
     Route::delete('technology/{id}', [TechnologyController::class, 'destroy'])->name('technology.destroy');

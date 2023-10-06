@@ -16,7 +16,8 @@ export default {
 
 
         <div class="position-absolute top-50 start-50 translate-middle text-center w-50">
-            <h1 class=" text-white outline-black text-uppercase">Ciao, io sono <span class="name">Lorenzo Troiano</span> ma
+            <h1 class=" text-white outline-black text-uppercase">Ciao, io sono <span class="name outline-peach">Lorenzo
+                    Troiano</span> ma
                 puoi
                 chiamarmi <span class="name">throjans</span></h1>
             <span class="fs-5">Sono uno Jr. Full Stack Developer</span>
@@ -57,28 +58,22 @@ main {
 
 /* Stile per il contorno nero */
 .outline-black {
-    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-width: 1px;
     /* Larghezza del contorno nero */
     -webkit-text-stroke-color: black;
     /* Colore del contorno nero */
-    text-stroke-width: 2px;
-    /* Larghezza del contorno nero */
-    text-stroke-color: black;
-    /* Colore del contorno nero */
-
+    /* text-stroke-width: 2px;
+    text-stroke-color: black; */
     font-family: 'AR One Sans', sans-serif;
     font-size: 35px;
-
-
-
 }
 
 .name {
     color: rgb(55, 40, 40);
-
     font-family: 'AR One Sans', sans-serif;
     font-size: 45px;
 }
+
 
 .font {
 

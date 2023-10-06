@@ -22,13 +22,13 @@ const router = createRouter({
             path: '/about',
             name: 'about',
             component: () => import('./pages/About.vue')
-        }
+        },
 
-        // {
-        //     path: '/projects/:id',
-        //     name: 'project-show',
-        //     component: () => import('/ProjectShow.vue')
-        // }
+        {
+            path: '/projects/:id',
+            name: 'project-show',
+            component: () => import('./pages/ShowProject.vue')
+        }
 
         // MATCH EVERYTHING ELSE
         // {

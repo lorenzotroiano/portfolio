@@ -2,9 +2,10 @@
 @section('content')
     <div class="container p-5">
 
-        {{-- <img src="
-            {{ asset($project->main_picture ? 'storage/' . $project->main_picture : 'storage/images/project.jpg') }}"
-            width="200px"> --}}
+        <img src="
+        {{ asset($project->immagine ? 'storage/' . $project->immagine : 'storage/throjans.png') }}"
+            width="200px">
+
 
         <h1>
             &#128193; {{ $project->titolo }}
@@ -14,12 +15,9 @@
             {{ $project->descrizione }}
         </p>
 
-
-
         <span class="bg-warning"> Tipologia:
             {{ $project->type->nome }}
         </span>
-
 
         <div class="bg-warning">Tecnologie:
             @foreach ($project->technologies as $technology)
@@ -30,13 +28,13 @@
 
         <a href="{{ route('project.edit', $project->id) }}">Modifica</a>
 
-        {{-- @if ($project->main_picture)
+        @if ($project->immagine)
             <form class="d-inline" method="POST" action="{{ route('project.picture.delete', $project->id) }}">
                 @csrf
                 @method('DELETE')
                 <input class="btn btn-primary" type="submit" value="DELETE PICTURE">
             </form>
-        @endif --}}
+        @endif
 
 
         <!-- Form per confermare l'eliminazione -->

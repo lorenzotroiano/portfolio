@@ -6,14 +6,14 @@
             @csrf
             @method('PUT')
 
-            {{-- @if ($project->main_picture)
-                <img src="{{ asset('storage/' . $project->main_picture) }}" width="200px">
+            @if ($project->immagine)
+                <img src="{{ asset('storage/' . $project->immagine) }}" width="200px">
                 <br>
-            @endif --}}
-            {{-- <label for="main_picture">Main picture</label>
+            @endif
+            <label for="immagine">immagine</label>
             <br>
-            <input type="file" name="main_picture" id="main_picture">
-            <br> --}}
+            <input type="file" name="immagine" id="immagine">
+            <br>
 
             <label for="titolo">titolo:</label>
             <input type="text" name="titolo" value="{{ $project->titolo }}" required>
