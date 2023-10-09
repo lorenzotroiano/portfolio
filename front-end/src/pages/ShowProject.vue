@@ -44,7 +44,7 @@ export default {
         <h4>Technologies:</h4>
         <ul>
             <li v-for="technology in project.technologies" :key="technology.id">
-                {{ technology.nome }}
+                {{ technology.nome }} - <i :class="technology.icona"></i>
             </li>
         </ul>
     </div>

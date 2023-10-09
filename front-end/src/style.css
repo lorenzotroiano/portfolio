@@ -2,6 +2,10 @@
     background: rgba(254, 204, 171, 0.3);
 }
 
+body::-webkit-scrollbar {
+    width: 0;
+}
+
 /* @import url(https://fonts.googleapis.com/css?family=Exo:100); */
 
 /* Background data (Original source: https://subtlepatterns.com/grid-me/) */

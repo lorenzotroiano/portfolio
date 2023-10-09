@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use App\Models\Technology;
-use App\Models\Project;
 
 class TechnologyTableSeeder extends Seeder
 {
@@ -16,25 +15,39 @@ class TechnologyTableSeeder extends Seeder
      */
     public function run()
     {
-        $technologies = ['vue.js', 'laravel', 'js', 'html', 'css', 'php'];
-
-        foreach ($technologies as $techName) {
-            $technology = new Technology();
-            $technology->nome = $techName;
-            $technology->save();
-        }
-
-        // Assumi che tu abbia già creato manualmente alcuni oggetti "Project" nel database
-        $projects = Project::all();
-
-        // Assumi che tu abbia già creato manualmente gli oggetti "Technology" nel passaggio precedente
-
-        foreach ($projects as $project) {
-            // Scegli casualmente un insieme di tecnologie tra quelle create in precedenza
-            $technologies = Technology::inRandomOrder()->limit(rand(1, 3))->get();
-
-            // Associa le tecnologie a questo progetto nella tabella pivot
-            $project->technologies()->attach($technologies);
-        }
+        Technology::insert([
+            [
+                'nome' => 'Html',
+                'icona' => 'fa-brands fa-html5',
+            ],
+            [
+                'nome' => 'Css',
+                'icona' => 'fa-brands fa-css3-alt',
+            ],
+            [
+                'nome' => 'Javascript',
+                'icona' => 'fa-brands fa-js',
+            ],
+            [
+                'nome' => 'Vue',
+                'icona' => 'fa-brands fa-vuejs',
+            ],
+            [
+                'nome' => 'Php',
+                'icona' => 'fa-brands fa-php',
+            ],
+            [
+                'nome' => 'MySQL',
+                'icona' => 'fa-solid fa-database',
+            ],
+            [
+                'nome' => 'Laravel',
+                'icona' => 'fa-brands fa-laravel'
+            ],
+            [
+                'nome' => 'SASS',
+                'icona' => 'fa-brands fa-sass'
+            ],
+        ]);
     }
 }

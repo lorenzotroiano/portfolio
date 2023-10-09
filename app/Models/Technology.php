@@ -10,7 +10,8 @@ class Technology extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nome'
+        'nome',
+        'icona'
     ];
 
     public function projects()
