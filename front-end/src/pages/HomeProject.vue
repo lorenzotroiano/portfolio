@@ -47,7 +47,7 @@ export default {
         <div class="project-titles">
             <h2 class="position-fixed">Progetti <span class="fs-5">({{
                 totalProjectsCount }})</span></h2>
-            <ul class="">
+            <ul>
                 <li class="p-3" v-for="(project, index) in projects" :key="project.id"
                     @mouseover="activeProjectIndex = index" @mouseout="activeProjectIndex = null">
 
@@ -56,8 +56,8 @@ export default {
                         params: { id: project.id }
                     }">
                         <div class="d-flex align-items-center justify-content-between">
-                            <h3 class=""> {{
-                                project.titolo }}</h3>
+                            <span class="fs-3"> {{
+                                project.titolo }}</span>
                             <span>{{ project.type.nome }}</span>
                         </div>
 
@@ -87,7 +87,7 @@ img {
 h2 {
     position: relative;
     top: 220px;
-    /* background-color: #8C52FF; */
+    background: rgba(255, 255, 255, 1);
     width: 34%;
     padding: 10px;
     /* color: white; */
@@ -162,7 +162,7 @@ h2 {
 }
 
 .project-titles li {
-    /* margin-top: 80px; */
+
     cursor: pointer;
 
 
@@ -174,11 +174,12 @@ h2 {
     font-family: 'Source Code Pro', monospace;
     letter-spacing: 3px;
 
-
+    transition: all 1s;
 }
 
 .project-titles li:hover {
     font-weight: bold;
+    letter-spacing: 6px;
 }
 </style>
 
