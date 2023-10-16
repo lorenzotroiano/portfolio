@@ -22,12 +22,21 @@ export default {
 
 
 
+
+
+
+
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    Menu
+                <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
                 </button>
                 <ul class="dropdown-menu">
+                    <li><button class="dropdown-item" type="button"> <router-link
+                                class="link-offset-2 link-underline link-underline-opacity-0 link-secondary font"
+                                :to="{ name: 'landingpage' }"><span class="hover-underline">
+
+                                    Home
+                                </span></router-link></button></li>
                     <li><button class="dropdown-item" type="button"> <router-link
                                 class="link-offset-2 link-underline link-underline-opacity-0 link-secondary font"
                                 :to="{ name: 'home' }"><span class="hover-underline">
@@ -40,9 +49,14 @@ export default {
 
                                     Chi sono
                                 </span></router-link></button></li>
-                    <li><button class="dropdown-item" type="button"><a href="mailto:lorr.troiano99@libero.it?
-subject=Contattami!">Contatto</a></button>
-                    </li>
+
+                    <li><button class="dropdown-item" type="button"> <router-link
+                                class="link-offset-2 link-underline link-underline-opacity-0 link-secondary font"
+                                :to="{ name: 'contact' }"> <span class="hover-underline">
+
+                                    Contatto
+                                </span></router-link></button></li>
+
                 </ul>
             </div>
 
@@ -55,11 +69,8 @@ subject=Contattami!">Contatto</a></button>
 
 <style scoped>
 header {
-    /* background-color: violet; */
+
     height: 15vh;
-
-
-
 }
 
 nav {

@@ -8,9 +8,9 @@ export default {
     data() {
         return {
             projects: [],
-            image_url: 'http://localhost:8000/storage/',
-            image_default: 'http://localhost:8000/storage/',
-            activeProjectIndex: null
+            immagine_url: 'http://localhost:8000/storage/',
+            immagine_default: 'http://localhost:8000/storage/',
+
         }
     },
     methods: {
@@ -38,35 +38,51 @@ export default {
 </script>
 
 <template>
-    <div class="project-container  align-self-end">
-        <div class="project-images">
-            <div class="project-image" v-for="(project, index) in projects" :key="project.id">
-                <img class="rounded-end-5" :src="image_url + project.immagine" alt="" v-show="index === activeProjectIndex">
+    <h1 class="pb-3 d-flex align-items-start justify-content-center">I miei progetti
+        <small class="fs-5 mt-1">({{ totalProjectsCount }})</small>
+    </h1>
+
+    <section class="section-fant container-fluid">
+        <div class="m-auto" style="width: 90%;">
+
+            <div v-for="project in  projects " :key="project.id" class="py-4">
+
+                <div class="card bg-body-tertiary p-1 shadow rounded-end-5 ">
+                    <div class="row row-cols-sm-1 row-cols-lg-2 g-0">
+                        <div class="col-lg-7 overfl-y-auto" style="height: 450px;">
+                            <router-link class="" :to="{ name: 'project-show', params: { id: project.id } }"> <img
+                                    :src="immagine_url + project.immagine" class="img-fluid rounded-start"
+                                    alt="Project Image"></router-link>
+
+                        </div>
+                        <div class="col-lg-5 p-5 bg-immagine">
+                            <div class="card-body p-5 text-center">
+                                <h3 class="card-title text-uppercase">{{ project.titolo }}</h3>
+
+                                <span class="card-text"><strong>Pubblicato:</strong> {{ project.data }}</span><br><br>
+                                <span class="card-text"><strong>Tipologia:</strong> {{ project.type.nome }}</span>
+
+                                <div class="d-flex justify-content-evenly pt-5">
+
+                                    <!-- QUI DEVO INSERIRE IL LINK DEL PROGETTO PRESENTE SU GITHUB -->
+                                    <a class="btn btn-primary" :href="project.link" target="_blank"><i
+                                            class="fas fa-code"></i>
+                                        Code</a>
+
+                                    <!-- <a class="btn btn-secondary" href="#"><i class="fas fa-eye"></i> Details</a> -->
+
+                                    <router-link class="" :to="{ name: 'project-show', params: { id: project.id } }"> <a
+                                            class="btn btn-secondary" href="#"><i class="fas fa-eye"></i>
+                                            Details</a></router-link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <div class="project-titles">
-            <h2 class="position-fixed">Progetti <span class="fs-5">({{
-                totalProjectsCount }})</span></h2>
-            <ul>
-                <li class="p-3" v-for="(project, index) in projects" :key="project.id"
-                    @mouseover="activeProjectIndex = index" @mouseout="activeProjectIndex = null">
-
-                    <router-link class="link-offset-2 link-underline link-underline-opacity-0 text-dark" :to="{
-                        name: 'project-show',
-                        params: { id: project.id }
-                    }">
-                        <div class="d-flex align-items-center justify-content-between">
-                            <span class="fs-3"> {{
-                                project.titolo }}</span>
-                            <span>{{ project.type.nome }}</span>
-                        </div>
-
-
-                    </router-link>
-                </li>
-            </ul>
-        </div>
-    </div>
+    </section>
 </template>
 
 
@@ -74,112 +90,108 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
 
-img {
-    object-fit: cover;
-    /* height: 100%; */
-    /* width: 100%; */
+.bg-immagine {
+    background-image: url(../../public/img/1575.jpg);
+    border-radius: 22px;
+    background-repeat: no-repeat;
 
-    width: 700px;
-    height: 554px;
+
+
+    background-size: 400%;
 
 }
 
-h2 {
-    position: relative;
-    top: 220px;
-    background: rgba(255, 255, 255, 1);
-    width: 34%;
-    padding: 10px;
-    /* color: white; */
+.card {
+    transition: all 1s;
+    /* opacity: 0.75; */
+}
 
-
+h3 {
+    -webkit-text-stroke-width: 1px;
+    /* Larghezza del contorno nero */
+    -webkit-text-stroke-color: black;
+    /* Colore del contorno nero */
+    /* text-stroke-width: 2px;
+    text-stroke-color: black; */
     font-family: 'AR One Sans', sans-serif;
     font-size: 37px;
-    letter-spacing: 10px;
+    color: white;
 
+    /* letter-spacing: 7px; */
 }
 
-
-
-.project-container {
-    width: 85%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    height: 85vh;
-
-    align-items: end;
-
-
+span {
+    color: rgb(0, 0, 0);
+    font-family: 'AR One Sans', sans-serif;
+    font-size: 22px;
 }
 
-.project-images {
-    /* flex: 1; */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.section-fant {
 
-    width: 55%;
-
-    height: 80%;
-}
-
-.project-image {}
-
-.project-titles {
-    /* flex: 1; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 40%;
-
-
-    height: 80%;
-    /* overflow: auto; */
-    overflow: auto;
+    height: 75vh;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    /* Nasconde la scrollbar in Firefox */
+    scrollbar-color: transparent transparent;
+    /* Nasconde la scrollbar in Firefox */
+    -ms-overflow-style: none;
+    /* Nasconde la scrollbar in IE/Edge */
     scrollbar-width: none;
-
-
+    /* Nasconde la scrollbar in Webkit (Chrome, Safari) */
 }
 
-.project-titles::-webkit-scrollbar {
-    width: 0;
-    /* Nasconde la scrollbar in WebKit (Chrome, Safari, etc.) */
+.section-fant::-webkit-scrollbar {
+    width: 6px;
+    /* Larghezza della scrollbar */
 }
 
-
-
-
-
-.project-titles ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    height: 80%;
-
+.overfl-y-auto {
+    overflow-y: hidden;
+    scrollbar-width: thin;
+    /* Nasconde la scrollbar in Firefox */
+    scrollbar-color: transparent transparent;
+    /* Nasconde la scrollbar in Firefox */
+    -ms-overflow-style: none;
+    /* Nasconde la scrollbar in IE/Edge */
+    scrollbar-width: none;
+    /* Nasconde la scrollbar in Webkit (Chrome, Safari) */
 }
 
-.project-titles li {
+/* Nasconde la scrollbar in Webkit (Chrome, Safari) */
+.overfl-y-auto::-webkit-scrollbar-thumb {
+    background: transparent;
+    /* Colore della scrollbar */
+}
 
-    cursor: pointer;
+.section-fant::-webkit-scrollbar {
+    width: 6px;
+    /* Larghezza della scrollbar */
+}
 
+.overfl-y-auto::-webkit-scrollbar {
+    width: 6px;
+    /* Larghezza della scrollbar */
+}
 
-    border-top: 1px solid #8C52FF;
-    border-bottom: 1px solid #8C52FF;
+.overfl-y-auto::-webkit-scrollbar-thumb {
+    background: transparent;
+}
 
+img {
 
-    /* background: rgba(254, 204, 171, 0.3); */
-    font-family: 'Source Code Pro', monospace;
-    letter-spacing: 3px;
-
+    opacity: 0.75;
     transition: all 1s;
 }
 
-.project-titles li:hover {
-    font-weight: bold;
-    letter-spacing: 6px;
+/* img:hover {
+    opacity: 1;
+} */
+
+.card:hover,
+img:hover {
+    letter-spacing: 3px;
+    opacity: 1;
+
 }
 </style>
 

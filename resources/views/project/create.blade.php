@@ -30,6 +30,10 @@
             <input type="text" name="descrizione" id="descrizione">
             <br>
 
+            <label for="link">link</label>
+            <br>
+            <input type="text" name="link" id="link">
+
 
             <select name="type_id" id="type_id">
                 @foreach ($types as $type)

@@ -28,6 +28,12 @@ const router = createRouter({
             path: '/projects/:id',
             name: 'project-show',
             component: () => import('./pages/ShowProject.vue')
+        },
+
+        {
+            path: '/contact',
+            name: 'contact',
+            component: () => import('./pages/Contact.vue')
         }
 
         // MATCH EVERYTHING ELSE

@@ -14,6 +14,7 @@ class Project extends Model
         'descrizione',
         'data',
         'immagine',
+        'link',
 
         'type_id'
     ];

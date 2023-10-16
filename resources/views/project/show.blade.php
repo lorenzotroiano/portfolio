@@ -14,6 +14,9 @@
         <p>
             {{ $project->descrizione }}
         </p>
+        <p>
+            {{ $project->link }}
+        </p>
 
         <span class="bg-warning"> Tipologia:
             {{ $project->type->nome }}

@@ -22,7 +22,11 @@
             <input type="date" name="data" value="{{ $project->data }}" required>
 
             <label for="descrizione">descrizione:</label>
-            <input type="text" name="descrizione" value="{{ $project->descrizione }}" required>
+            <textarea name="descrizione" value="{{ $project->descrizione }}" rows="5" cols="33" required></textarea>
+
+            <label for="link">link</label>
+            <br>
+            <input type="text" name="link" value="{{ $project->link }}" required>
 
 
             <select name="type_id" id="type_id">
