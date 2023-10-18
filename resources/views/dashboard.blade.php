@@ -4,7 +4,7 @@
     <div class="progetti p-5">
         <div class="d-flex justify-content-between">
 
-            <h2 class="">Progetti</h2>
+            <h2 class="text-white">Progetti</h2>
 
             <div class="d-flex justify-content-between">
 
@@ -50,7 +50,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <div class="d-flex justify-content-around align-items-center">
+                        <div class="d-flex justify-content-around align-items-center my-2">
                             <span>Progetto:</span>
                             <div class="">
                                 <a class="btn btn-primary mx-3" href="{{ route('project.create') }}">
@@ -82,7 +82,7 @@
 
 
                     <div>
-                        <a class="link-body-emphasis link-underline-opacity-0 fs-4"
+                        <a class="link-body-emphasis link-underline-opacity-0 fs-4 text-white"
                             href="{{ route('project.show', $project->id) }}">
                             {{ $project->titolo }}</a>
                     </div>

@@ -26,7 +26,7 @@ class ProjectTableSeeder extends Seeder
             [
                 'titolo' => 'Boolbnb',
                 'descrizione' => 'Rappresentazione di AirBnb',
-                'data' => '2023-09-21',
+                'anno' => '2023',
                 'immagine' => 'https://www.sitebysite.it/wp-content/uploads/2022/10/Come-cambieranno-i-siti-web-2023_sito1.jpg',
                 'link' => 'ciao',
                 'type_id' => 1
@@ -34,7 +34,7 @@ class ProjectTableSeeder extends Seeder
             [
                 'titolo' => 'BoolFlix',
                 'descrizione' => 'Rappresentazione di Netflix',
-                'data' => '2023-06-21',
+                'anno' => '2021',
                 'immagine' => 'https://www.kasadellacomunicazione.it/wp-content/uploads/2020/08/migliori-siti-web.jpg',
                 'link' => 'ciaob',
                 'type_id' => 2
@@ -42,7 +42,7 @@ class ProjectTableSeeder extends Seeder
             [
                 'titolo' => 'Boolzapp',
                 'descrizione' => 'Rappresentazione di Whatsapp',
-                'data' => '2023-05-11',
+                'anno' => '2022',
                 'immagine' => 'https://www.informarea.it/wp-content/uploads/upload/2013/07/risoluzione_video_siti_web.jpg',
                 'link' => 'ciaode',
                 'type_id' => 2
@@ -50,7 +50,7 @@ class ProjectTableSeeder extends Seeder
             [
                 'titolo' => 'Discord',
                 'descrizione' => 'Rappresentazione di Discord',
-                'data' => '2023-04-18',
+                'anno' => '2020',
                 'immagine' => 'https://kinsta.com/it/wp-content/uploads/sites/2/2021/12/software-di-progettazione-di-siti-web.png',
                 'link' => 'ciaosium',
                 'type_id' => 3

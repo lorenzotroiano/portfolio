@@ -10,7 +10,7 @@
         <h1>
             &#128193; {{ $project->titolo }}
         </h1>
-        <h6> {{ $project->data }}</h6>
+        <h6> {{ $project->anno }}</h6>
         <p>
             {{ $project->descrizione }}
         </p>

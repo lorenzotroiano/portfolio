@@ -2,7 +2,7 @@
     <div class="container-fluid pe-lg-0 mt-3 mt-lg-5 pt-3 pt-lg-5 mb-5 mb-lg-0">
         <div class=" row justify-content-between align-items-center ">
             <div class="col-sm-10 col-lg-6 flex-column ps-lg-5 ms-lg-5 mb-5">
-                <h2 class="border-bottom pb-3">Chi sono</h2>
+                <h2 class="border-bottom border-black pb-3">Chi sono</h2>
                 <p class="pt-3 fs-4">
                     Sono Lorenzo, noto online come "throjans," e sono un giovane sviluppatore full-stack con una passione
                     per la

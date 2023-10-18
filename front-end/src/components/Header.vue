@@ -79,5 +79,28 @@ nav {
     align-items: center;
     padding: 25px;
 }
+
+.btn-secondary {
+    --bs-btn-color: #000000;
+    --bs-btn-bg: rgba(255, 255, 255, 0);
+    --bs-btn-border-color: rgba(255, 255, 255, 0);
+    font-size: 20px;
+}
+
+.btn:hover {
+    color: black;
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+}
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+    color: black;
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+}
 </style>
 

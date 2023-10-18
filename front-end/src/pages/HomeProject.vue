@@ -56,10 +56,10 @@ export default {
 
                         </div>
                         <div class="col-lg-5 p-5 bg-immagine">
-                            <div class="card-body p-5 text-center">
+                            <div class="card-body padding-cards text-center">
                                 <h3 class="card-title text-uppercase">{{ project.titolo }}</h3>
 
-                                <span class="card-text"><strong>Pubblicato:</strong> {{ project.data }}</span><br><br>
+                                <span class="card-text"><strong>Pubblicato:</strong> {{ project.anno }}</span><br><br>
                                 <span class="card-text"><strong>Tipologia:</strong> {{ project.type.nome }}</span>
 
                                 <div class="d-flex justify-content-evenly pt-5">
@@ -124,6 +124,31 @@ span {
     color: rgb(0, 0, 0);
     font-family: 'AR One Sans', sans-serif;
     font-size: 22px;
+}
+
+.padding-cards {
+    padding: 45px;
+}
+
+@media (max-width: 812px) {
+
+
+
+    h3 {
+        font-size: 20px;
+    }
+
+    span {
+        font-size: 17px;
+    }
+
+    .padding-cards {
+        padding: 0px;
+    }
+
+    a {
+        font-size: 15px;
+    }
 }
 
 .section-fant {

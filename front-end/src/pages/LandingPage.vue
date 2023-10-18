@@ -30,20 +30,20 @@ export default {
                         </span>
                     </h1>
 
-                    <span class="fs-5">Sono uno Jr. Full Stack Developer</span>
+                    <span class="text-professione">Sono uno Jr. Full Stack Developer</span>
 
                     <div class="row py-3 justify-content-center">
 
-                        <div class="col-lg-5">
+                        <div class="col-sm-10 col-lg-5">
 
                             <router-link class="link-offset-2 link-underline link-underline-opacity-0 link-secondary font"
                                 :to="{ name: 'home' }"><span class="hover-underline">
                                     <i class="fa-solid fa-arrow-right"></i>
-                                    visita i miei progetti
+                                    i miei progetti
                                 </span>
                             </router-link>
                         </div>
-                        <div class="col-lg-3 pt-3 pt-lg-0">
+                        <div class="col-sm-10 col-lg-3 pt-3 pt-lg-0">
                             <router-link class="link-offset-2 link-underline link-underline-opacity-0 link-secondary font"
                                 :to="{ name: 'about' }"> <span class="hover-underline">
                                     <i class="fa-solid fa-arrow-right"></i>
@@ -84,10 +84,20 @@ main {
     font-size: 35px;
 }
 
+.text-professione {
+    font-size: 22px;
+}
+
 .name {
     color: rgb(55, 40, 40);
     font-family: 'AR One Sans', sans-serif;
     font-size: 45px;
+}
+
+.font {
+
+    font-family: 'Source Code Pro', monospace;
+    font-size: 17px;
 }
 
 @media (max-width: 812px) {
@@ -100,21 +110,27 @@ main {
         /* text-stroke-width: 2px;
     text-stroke-color: black; */
         font-family: 'AR One Sans', sans-serif;
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .name {
 
-        font-size: 34px;
+        font-size: 30px;
+    }
+
+    .text-professione {
+        font-size: 16px;
+    }
+
+    .font {
+
+
+        font-size: 12px;
     }
 }
 
 
-.font {
 
-    font-family: 'Source Code Pro', monospace;
-    font-size: 17px;
-}
 
 i {
     margin: 0 5px 0 10px;

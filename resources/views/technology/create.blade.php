@@ -1,31 +1,25 @@
-<div class="container text-center">
-    @extends('layouts.app')
+@extends('layouts.app')
 
-    @section('content')
-        <h1>Create new Technology</h1>
-
-        <form method="POST" action="{{ route('technology.store') }}" enctype="multipart/form-data">
-
-            @csrf
-            {{-- @method('POST') --}}
-
-            {{-- <label for="main_picture">Main picture</label>
-    <br>
-    <input type="file" name="main_picture" id="main_picture">
-    <br> --}}
-
-
-            <label for="nome">Nome</label>
-            <br>
-            <input type="text" name="nome" id="nome">
+@section('content')
+    <h1 class="text-center mt-5 pt-5">Create new Technology</h1>
 
 
 
+    <form class='create-form' method="POST" action="{{ route('technology.store') }}" enctype="multipart/form-data">
+        @csrf
+        @method('POST')
 
 
-            <!-- Bottone di submit per inviare il form -->
-            <input class="my-3" type="submit" value="CREATE">
+        <div class="flex-row">
+            <input placeholder='Inserisci nome' id="nome" type="text" class="lf--input form-control" name="nome"
+                required>
+        </div>
 
-        </form>
-    </div>
+
+        <div class="flex-row">
+            <input placeholder='Inserisci icona' id="icona" type="text" class="lf--input form-control" name="icona"
+                required>
+        </div>
+        <input class="lf--submit" type="submit" value="CREATE">
+    </form>
 @endsection

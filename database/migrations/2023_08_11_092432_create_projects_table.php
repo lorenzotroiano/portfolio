@@ -18,7 +18,7 @@ return new class extends Migration
 
             $table->string('titolo');
             $table->text('descrizione');
-            $table->date('data');
+            $table->year('anno');
             $table->text('immagine')->nullable();
             $table->string('link')->unique();
 

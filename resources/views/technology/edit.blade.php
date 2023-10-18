@@ -1,30 +1,22 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container text-center p-4">
-        <form method="POST" action="{{ route('technology.update', $technology->id) }}" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
-
-            {{-- @if ($project->main_picture)
-                <img src="{{ asset('storage/' . $project->main_picture) }}" width="200px">
-                <br>
-            @endif --}}
-            {{-- <label for="main_picture">Main picture</label>
-            <br>
-            <input type="file" name="main_picture" id="main_picture">
-            <br> --}}
-
-            <label for="nome">nome:</label>
-            <input type="text" name="nome" value="{{ $technology->nome }}" required>
+    <form class='create-form' method="POST" action="{{ route('technology.update', $technology->id) }}"
+        enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
 
 
+        <div class="flex-row">
+            <input placeholder='Inserisci nome' id="nome" type="text" class="lf--input form-control" name="nome"
+                value="{{ $technology->nome }}" required>
+        </div>
 
+        <div class="flex-row">
+            <input placeholder='Inserisci icona' id="icona" type="text" class="lf--input form-control" name="icona"
+                value="{{ $technology->icona }}" required>
+        </div>
 
-
-
-
-            <button type="submit">Salva modifiche</button>
-        </form>
-    </div>
+        <button class="lf--submit" type="submit">Salva modifiche</button>
+    </form>
 @endsection

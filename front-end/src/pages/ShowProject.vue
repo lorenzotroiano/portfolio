@@ -32,47 +32,44 @@ export default {
 </script>
 
 <template>
+    <router-link class="link-offset-2 link-underline link-underline-opacity-0 link-secondary position-fixed"
+        :to="{ name: 'home' }">
+
+        <i class="fa-solid fa-arrow-right fa-rotate-180 rounded-start-pill p-2 text-white"></i>
+
+
+    </router-link>
     <div class="container">
+
         <div class=" row justify-content-center align-items-start position-elastico">
             <div v-if="project" class="col-sm-8 py-4 p-lg-0 col-lg-8">
                 <img class="img-fluid"
                     :src="project.immagine ? image_url + project.immagine : '../../public/img/throjans.png'" />
 
-                <div class="row row-cols-3 align-items-center border-bottom my-4">
+                <div class="row row-cols-3 align-items-center border-bottom border-black my-4">
                     <h1 class="titolo">{{ project.titolo }}</h1>
                     <h4 class="text-center type">{{ project.type.nome }}</h4>
-                    <span class="text-end type">2022</span>
+                    <span class="text-end type">{{ project.anno }}</span>
                 </div>
 
 
                 <div class="row my-2 p-1">
-                    <div class="col-lg-6 text-start border-end border-black">
+                    <div class="col-lg-6 text-start border-descrizione">
                         <p class="">{{ project.descrizione }}</p>
                     </div>
                     <div class="col text-center ps-3">
                         <!-- <h4>Tecnologie usate:</h4> -->
                         <ul class="row row-cols-lg-3 list-unstyled">
-                            <li class="col p-1 my-2 technology" v-for="technology in project.technologies"
+                            <li class="col p-lg-1 my-2 technology" v-for="technology in project.technologies"
                                 :key="technology.id">
                                 {{ technology.nome }} - <i :class="technology.icona"></i>
                             </li>
                         </ul>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
 
     <!-- <div v-if="project">
         <h1>Project: {{ project.titolo }}</h1>
@@ -97,6 +94,10 @@ export default {
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap');
 
+.fa-rotate-180 {
+
+    background: rgb(255, 0, 0);
+}
 
 .titolo {
     color: white;
@@ -136,7 +137,9 @@ export default {
     margin-bottom: 30px;
 }
 
-
+.border-descrizione {
+    border-right: 1px solid black;
+}
 
 @media (max-width: 812px) {
 
@@ -156,6 +159,19 @@ export default {
 
 
         font-size: 14px;
+    }
+
+    .technology {
+
+
+        font-size: 14px;
+
+
+    }
+
+    .border-descrizione {
+        border-bottom: 1px solid black;
+        border-right: 0px solid black;
     }
 
 
