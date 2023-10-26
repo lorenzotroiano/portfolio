@@ -31,7 +31,7 @@ require __DIR__ . '/auth.php';
 
 
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/dashboard', [ProjectController::class, 'index'])->name('dashboard');
 
 
