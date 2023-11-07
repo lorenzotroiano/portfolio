@@ -1,15 +1,15 @@
 <script>
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api/v1';
+const API_URL = 'http://throjans.com/api/v1';
 
 export default {
     name: 'AppHome',
     data() {
         return {
             projects: [],
-            immagine_url: 'http://localhost:8000/storage/',
-            immagine_default: 'http://localhost:8000/storage/',
+            immagine_url: 'http://throjans.com/storage/',
+            immagine_default: 'http://throjans.com/storage/',
 
         }
     },
