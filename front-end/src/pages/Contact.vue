@@ -20,8 +20,7 @@ subject=Contattami!"> <i class="fa-regular fa-envelope mx-2 fs-5 "></i> Contatta
 
             <div class="col-sm-12 col-lg-3 d-flex justify-content-between align-items-center my-4 my-lg-0">
                 <h2>CV</h2>
-                <a class="link-underline-light fs-5" href="/portfolio/front-end/dist/cv.pdf" download> <i
-                        class="fa-solid fa-download fs-5 mx-1"></i>
+                <a class="link-underline-light fs-5" href="cv.pdf" download> <i class="fa-solid fa-download fs-5 mx-1"></i>
                     Scarica ora!
                 </a>
             </div>
