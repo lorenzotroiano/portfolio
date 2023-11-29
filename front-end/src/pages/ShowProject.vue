@@ -1,15 +1,15 @@
 <script>
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api/v1';
+const API_URL = 'https://localhost:8000/api/v1';
 
 export default {
     name: 'ShowProject',
     data() {
         return {
             project: null,
-            image_url: 'http://localhost:8000/storage/',
-            image_default: 'http://localhost:8000/storage/'
+            image_url: 'https://localhost:8000/storage/',
+            image_default: 'https://localhost:8000/storage/'
         }
     },
     mounted() {
