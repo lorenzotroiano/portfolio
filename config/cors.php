@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['GET', 'POST'],
 
-    'allowed_origins' => ['http://localhost:5174'],
+    'allowed_origins' => ['http://throjans.com'],
 
     'allowed_origins_patterns' => [],
 
