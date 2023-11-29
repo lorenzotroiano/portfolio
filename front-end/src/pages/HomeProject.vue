@@ -1,7 +1,7 @@
 <script>
 import axios from 'axios';
 
-const API_URL = 'http://api.throjans.com/api/v1';
+const API_URL = 'https://api.throjans.com/api/v1';
 
 export default {
     name: 'AppHome',
