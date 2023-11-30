@@ -17,6 +17,9 @@ use App\Models\Technology;
 |
 */
 
+Route::get('/', function () {
+    return view('auth.login');
+});
 
 
 Route::middleware('auth')->group(function () {
