@@ -49,7 +49,7 @@ export default {
 
                 <div class="card bg-body-tertiary p-1 shadow rounded-end-5 ">
                     <div class="row row-cols-sm-1 row-cols-lg-2 g-0">
-                        <div class="col-lg-7 overfl-y-auto" style="height: 450px;">
+                        <div class="col-lg-7 overfl-y-auto img-card">
                             <router-link class="" :to="{ name: 'project-show', params: { id: project.id } }"> <img
                                     :src="immagine_url + project.immagine" class="img-fluid rounded-start"
                                     alt="Project Image"></router-link>
@@ -101,10 +101,10 @@ export default {
 
 }
 
-.card {
+/* .card {
     transition: all 1s;
-    /* opacity: 0.75; */
-}
+    opacity: 0.75;
+} */
 
 h3 {
     -webkit-text-stroke-width: 1px;
@@ -130,6 +130,10 @@ span {
     padding: 45px;
 }
 
+.img-card {
+    height: 450px;
+}
+
 @media (max-width: 812px) {
 
 
@@ -148,6 +152,29 @@ span {
 
     a {
         font-size: 15px;
+    }
+
+
+}
+
+@media (min-width: 813px) {
+
+    /* Stili che si applicano solo quando la larghezza dello schermo è almeno 768px */
+    .card {
+        transition: all 1s;
+    }
+
+    .card:hover,
+    img:hover {
+        letter-spacing: 3px;
+        opacity: 1;
+
+    }
+
+    img {
+
+        opacity: 0.75;
+        transition: all 1s;
     }
 }
 
@@ -202,22 +229,15 @@ span {
     background: transparent;
 }
 
-img {
+/* img {
 
     opacity: 0.75;
     transition: all 1s;
-}
+} */
 
 /* img:hover {
     opacity: 1;
 } */
-
-.card:hover,
-img:hover {
-    letter-spacing: 3px;
-    opacity: 1;
-
-}
 </style>
 
 

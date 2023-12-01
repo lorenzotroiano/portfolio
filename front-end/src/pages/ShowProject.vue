@@ -125,11 +125,22 @@ export default {
 
     font-size: 16px;
 
-    transition: all 0.8s;
+    /* transition: all 0.8s; */
 }
 
-.technology:hover {
+/* .technology:hover {
     letter-spacing: -1px;
+} */
+
+
+@media (min-width: 813px) {
+    .technology:hover {
+        letter-spacing: -1px;
+    }
+
+    .technology {
+        transition: all 0.8s;
+    }
 }
 
 .position-elastico {
