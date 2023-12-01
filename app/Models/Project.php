@@ -20,12 +20,12 @@ class Project extends Model
         'type_id'
     ];
 
-    protected function immagine(): Attribute
-    {
-        return Attribute::make(
-            get: fn (string|null $value) => $value ? asset('storage/' . $value) : null,
-        );
-    }
+    // protected function immagine(): Attribute
+    // {
+    //     return Attribute::make(
+    //         get: fn (string|null $value) => $value ? asset('storage/' . $value) : null,
+    //     );
+    // }
 
     public function type()
     {

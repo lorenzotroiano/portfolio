@@ -70,8 +70,8 @@
 
         <div class="flex-row">
 
-            <input placeholder='Inserisci anno' id="anno" type="number" min="2023" max="2099" step="1"
-                class="lf--input form-control" name="anno" value="{{ $project->data }}" required>
+            <input placeholder='Inserisci anno' id="data" type="number" min="2000" max="2099" step="1"
+                class="lf--input form-control" name="data" value="{{ $project->data }}" required>
 
 
         </div>
@@ -118,7 +118,7 @@
                     <input class="form-check-input" type="checkbox" value="{{ $technology->id }}" name="technologies[]"
                         id="technology-{{ $technology->id }}"
                         @foreach ($project->technologies as $projectTech)
-                        @checked($technology -> id === $projectTech -> id) @endforeach>
+                        @checked($technology->id === $projectTech->id) @endforeach>
                     <label class="form-check-label text-white" for="technology-{{ $technology->id }}">
                         {{ $technology->nome }}
                     </label>
