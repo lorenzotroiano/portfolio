@@ -8,8 +8,8 @@ export default {
     data() {
         return {
             projects: [],
-            immagine_url: 'https://throjans.com/storage/',
-            immagine_default: 'https://throjans.com/storage/',
+            immagine_url: 'https://api.throjans.com/storage/',
+            immagine_default: 'https://api.throjans.com/storage/',
 
         }
     },
