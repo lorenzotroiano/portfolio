@@ -45,50 +45,6 @@ subject=Contattami!"> <i class="fa-regular fa-envelope mx-2 fs-5 "></i> Contatta
             </div>
         </div>
     </div>
-
-
-
-
-
-    <!-- <div class="w-75 m-auto mt-5 pt-2">
-
-        <div class="w-100 p-4">
-            <h1 class="border-bottom border-black w-100">
-                Contatto
-            </h1>
-        </div>
-
-        <div class="w-100 d-flex justify-content-between">
-            <div>
-                <span class="fs-5 w-75 p-4">
-                    Email: <a href="mailto:lorenzo.troiano1999@gmail.com?
-subject=Contattami!">lorenzo.troiano1999@gmail.com</a>
-                </span>
-            </div>
-
-            <div>
-
-
-
-                <a href="../../public/cv.pdf" download>
-                    Scarica ora!
-                </a>
-
-            </div>
-
-            <div class="row">
-
-                <div class="col">
-                    <h3>Social</h3>
-                </div>
-                <div class="col pt-2">
-
-                </div>
-            </div>
-
-        </div>
-
-    </div> -->
 </template>
 
 <script>

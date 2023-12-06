@@ -70,23 +70,6 @@ export default {
             </div>
         </div>
     </div>
-
-    <!-- <div v-if="project">
-        <h1>Project: {{ project.titolo }}</h1>
-        <img :src="project.immagine ? image_url + project.immagine : '../../public/img/throjans.png'" />
-        <p>{{ project.descrizione }}</p>
-        <div class="row mb-4 mt-2">
-            <span class="col">{{ project.data }}</span>
-
-        </div>
-        <h4><b>Type:</b> {{ project.type.nome }}</h4>
-        <h4>Technologies:</h4>
-        <ul>
-            <li v-for="technology in project.technologies" :key="technology.id">
-                {{ technology.nome }} - <i :class="technology.icona"></i>
-            </li>
-        </ul>
-    </div> -->
 </template>
 
 
